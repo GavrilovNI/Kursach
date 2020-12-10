@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+Kursach/NeuralNet/v16/ipch/
+Kursach/NeuralNet/v16/ipch/*
