@@ -122,7 +122,7 @@ namespace Visual
     {
         SleepEx(MS, FALSE);
     }
-    void TConsole::DelLine()
+    void TConsole::DelLine(uint32_t count)
     {
         auto scrbufInfo = GetScreenBufferInfo();
         CHAR_INFO CI{ (WCHAR)emptyChar, scrbufInfo.wAttributes };
@@ -130,7 +130,10 @@ namespace Visual
         scrbufInfo.srWindow.Top = Coord.Y + 1;
         //DWORD Size, Count;
         //Size = ScreenBufInfo.srWindow.Right - ScreenBufInfo.srWindow.Left + 1;
-        ScrollConsoleScreenBuffer(OutputHandle, &scrbufInfo.srWindow, 0, Coord, &CI);
+        for (size_t i = 0; i < count; i++)
+        {
+            ScrollConsoleScreenBuffer(OutputHandle, &scrbufInfo.srWindow, 0, Coord, &CI);
+        }
         //FillConsoleOutputAttribute(OutputHandle, ScreenBufInfo.wAttributes, Size, Coord, &Count);
     }
     bool TConsole::GotoXY(COORD coord)

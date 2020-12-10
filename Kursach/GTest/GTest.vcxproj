@@ -34,6 +34,8 @@
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
     <ClCompile Include="TestMatrix.cpp" />
+    <ClCompile Include="TestNetLoader.cpp" />
+    <ClCompile Include="TestNeuralNet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NeuralNet\NeuralNet.vcxproj">
@@ -58,6 +60,8 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

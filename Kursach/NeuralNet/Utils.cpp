@@ -32,11 +32,7 @@ namespace Visual
 
             COORD nPos = console->Where();
             console->GotoXY(startPos);
-            uint32_t n = nPos.Y - startPos.Y;
-            for (size_t i = 0; i < n; i++)
-            {
-                console->DelLine();
-            }
+            console->DelLine(nPos.Y - startPos.Y + 1);
 
         } while (std::tolower(input) != 'y' && std::tolower(input) != 'n');
 
@@ -44,6 +40,19 @@ namespace Visual
         console->GotoXY(startPos);
 
         return std::tolower(input) == 'y';
+    }
+
+    void Utils::Out(std::string text)
+    {
+        Visual::TConsole* console = Visual::TConsole::GetInstance();
+        COORD startPos = console->Where();
+
+        std::cout << text<<" (press any key)";
+        console->ReadKey();
+
+        COORD nPos = console->Where();
+        console->GotoXY(startPos);
+        console->DelLine(nPos.Y - startPos.Y + 1);
     }
 
 }

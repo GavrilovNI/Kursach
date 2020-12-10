@@ -1,47 +1,42 @@
 #pragma once
 #include "NeuralNetMenu.h"
 #include "Utils.h"
+#include "NetLoader.h"
 #include <functional>
+#include <string>
 
 using namespace std;
 using namespace Visual;
+using namespace NeuralNet;
+using namespace NeuralNet::Utils;
 
 namespace NeuralNet::NetMenu
 {
+	void NeuralNetMenu::SaveNetIfNeeded()
+	{
+		if (_net.GetLayersCount() == 0 || isSaved())
+			return;
+
+		TConsole* console = TConsole::GetInstance();
+		COORD startPos = console->Where();
+
+		SetCursorUnderMenu();
+
+		if (Visual::Utils::Question("Would you like to save previous Neural Network"))
+		{
+			Save();
+		}
+		console->GotoXY(startPos);
+	}
+
 	void NeuralNetMenu::createNetAction(Menu* menu)
 	{
 		if (menu->GetType() == "NeuralNetMenu")
 		{
 			NeuralNetMenu* nnMenu = (NeuralNetMenu*)menu; //dynamic_cast<NeuralNetMenu*>(menu);
 
-			TConsole* console = TConsole::GetInstance();
-			COORD startPos = console->Where();
-
-			COORD strCOORD = startPos + COORD{ 0, (short)menu->GetButtonsCount() };
-			console->GotoXY(strCOORD);
-			uint32_t layersNum;
-			cout << "Number of layers: ";
-			cin >> layersNum;
-			console->GotoXY(strCOORD);
-			console->DelLine();
-
-			vector<int> layersSizes(layersNum);
-
-			for (size_t i = 0; i < layersNum; i++)
-			{
-				console->GotoXY(strCOORD);
-				int layerSize;
-				cout << "Size of layer #" << to_string(i) << ": ";
-				cin >> layerSize;
-				console->GotoXY(strCOORD);
-				console->DelLine();
-				layersSizes[i] = layerSize;
-			}
-
-
-			console->GotoXY(startPos);
-
-			nnMenu->Create(layersSizes);
+			nnMenu->SaveNetIfNeeded();
+			nnMenu->Create();
 		}
 	}
 	void NeuralNetMenu::loadNetAction(Menu* menu)
@@ -50,82 +45,155 @@ namespace NeuralNet::NetMenu
 		{
 			NeuralNetMenu* nnMenu = (NeuralNetMenu*)menu; //dynamic_cast<NeuralNetMenu*>(menu);
 
-			TConsole* console = TConsole::GetInstance();
-			COORD startPos = console->Where();
+			nnMenu->SaveNetIfNeeded();
+			nnMenu->Load();
+		}
+	}
+	void NeuralNetMenu::saveNetAction(Menu* menu)
+	{
+		if (menu->GetType() == "NeuralNetMenu")
+		{
+			NeuralNetMenu* nnMenu = (NeuralNetMenu*)menu; //dynamic_cast<NeuralNetMenu*>(menu);
 
-			COORD strCOORD = startPos + COORD{ 0, (short)menu->GetButtonsCount() };
-			console->GotoXY(strCOORD);
-			string path;
-			cout << "Path: ";
-			cin >> path;
-			console->GotoXY(strCOORD);
-			console->DelLine();
-
-			console->GotoXY(startPos);
-
-			nnMenu->Load(path);
+			nnMenu->Save();
 		}
 	}
 
-	const string NeuralNetMenu::loadedNetNameText = "Net Name: ";
+	const string NeuralNetMenu::netNameText = "Net ";
 
 	NeuralNetMenu::NeuralNetMenu(COORD pos, SHORT length) :Menu(pos)
 	{
 		function<void(Menu*)> loadAction = bind(&NeuralNetMenu::loadNetAction, this, placeholders::_1);
 		function<void(Menu*)> createAction = bind(&NeuralNetMenu::createNetAction, this, placeholders::_1);
+		function<void(Menu*)> saveAction = bind(&NeuralNetMenu::saveNetAction, this, placeholders::_1);
 
 		COORD btnSize = { length,1 };
-		buttonState = new Button(loadedNetNameText + "null", btnSize);
+		buttonState = new Button(netNameText, btnSize);
 		AddButton(buttonState);
-		AddButton(new ButtonAction(loadAction, "Load Net", btnSize));
 		AddButton(new ButtonAction(createAction, "Create Net", btnSize));
+		AddButton(new ButtonAction(loadAction, "Load Net", btnSize));
+		AddButton(new ButtonAction(saveAction, "Save Net", btnSize));
 		AddButton(new Button("Get Result", btnSize));
 		AddButton(new Button("Study", btnSize));
 		AddButton(new QuitButton(QuitButton::defaultName, btnSize));
 	}
+
 
 	string NeuralNetMenu::GetType() const
 	{
 		return "NeuralNetMenu";
 	}
 
-	void NeuralNetMenu::Load(string path)
+	string NeuralNetMenu::Layers2Str(const vector<uint32_t>& layersSizes) const
 	{
-		UnDraw();
-		buttonState->SetLabel(loadedNetNameText + path);
-		Draw();
-
-		//TODO Load
-	}
-	void NeuralNetMenu::Create(vector<int> layersSizes)
-	{
-		UnDraw();
-		string name = "Net Created(";
+		string result = "(";
 		for (size_t i = 0; i < layersSizes.size(); i++)
 		{
-			name += to_string(layersSizes[i]);
+			result += to_string(layersSizes[i]);
 			if (i != layersSizes.size() - 1)
 			{
-				name += ", ";
+				result += ", ";
 			}
 		}
-		name += ")";
+		result += ")";
+		return result;
+	}
 
-		buttonState->SetLabel(name);
+	bool NeuralNetMenu::isSaved() const
+	{
+		if (!_saved)
+			return false;
+		Net net;
+		if (!Loader::Load(savedPath, net))
+			return false;
 
-		if (_net != nullptr)
-		{
-			if (Visual::Utils::Question("Would you like to save previous Neural Network"))
-			{
-				//TODO Save
-			}
+		return net == _net;
+	}
 
-			delete _net;
-		}
-
-		_net = new Net(layersSizes);
-
+	void NeuralNetMenu::UpdateNetBtn()
+	{
+		UnDraw();
+		buttonState->SetLabel(netNameText + Layers2Str(_net.GetLayerSizes()));
 		Draw();
+	}
+
+	void NeuralNetMenu::Load()
+	{
+		TConsole* console = TConsole::GetInstance();
+		COORD startPos = console->Where();
+		SetCursorUnderMenu();
+		string path = Visual::Utils::InputVar<string>("Load path");
+
+		bool loaded = Loader::Load(path, _net);
+		if (loaded)
+		{
+			UpdateNetBtn();
+			savedPath = path;
+			_saved = true;
+		}
+
+		Visual::Utils::Out(loaded ? "loaded" : "file not found");
+
+		console->GotoXY(startPos);
+	}
+
+
+
+	
+	
+
+	void NeuralNetMenu::Create()
+	{
+		TConsole* console = TConsole::GetInstance();
+		COORD startPos = console->Where();
+		SetCursorUnderMenu();
+
+		//auto more0 = std::bind(&TrueIfMoreV<uint32_t, 0>, std::placeholders::_1, std::placeholders::_2);
+		auto more0 = Visual::Utils::bindOkFunc(&TrueIfMoreV<uint32_t, 0>);//TODO: use not memver function
+
+		uint32_t layersNum = Visual::Utils::InputVar<uint32_t>("Number of layers", more0);
+		vector<uint32_t> layersSizes(layersNum+1);
+
+		layersSizes[0] = Visual::Utils::InputVar<uint32_t>("Size of inputs", more0);
+		for (size_t i = 0; i < layersNum; i++)
+		{
+			layersSizes[i + 1] = Visual::Utils::InputVar<uint32_t>("Size of layer #" + to_string(i), more0);
+		}
+
+		_net = Net(layersSizes);
+
+		UpdateNetBtn();
+
+		Visual::Utils::Out("created");
+		console->GotoXY(startPos);
+
+		_saved = false;
+	}
+
+	void NeuralNetMenu::Save()
+	{
+		if (_net.GetLayersCount() == 0)
+			return;
+
+		TConsole* console = TConsole::GetInstance();
+		COORD startPos = console->Where();
+		SetCursorUnderMenu();
+		string path = Visual::Utils::InputVar<string>("Save path");
+		bool saved = Loader::Save(_net, path);
+		if (!saved)
+		{
+			if (Visual::Utils::Question("File already exist, do you want to rewrite it"))
+			{
+				saved = Loader::Save(_net, path, true);
+			}
+		}
+
+
+		Visual::Utils::Out(saved ? "saved" : "not saved");
+		console->GotoXY(startPos);
+
+		savedPath = path;
+		_saved = saved;
 	}
 
 }

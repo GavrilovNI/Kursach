@@ -7,6 +7,10 @@
 #include <vector>
 #include <conio.h>
 #include <iostream>
+#include "ActivationFunc.h"
+#include <iosfwd>
+#include <sstream>
+#include <cassert>
 
 using namespace NeuralNet;
 using namespace NeuralNet::Utils;
@@ -76,9 +80,89 @@ void check(Net& net)
 	printNet(results, inputs);
 }
 
+template <typename T>
+std::vector<char> Var2Bytes(T value)
+{
+	std::vector<char> arrayOfByte(sizeof(value));
+	char* val = reinterpret_cast<char*>(&value);
+	for (int i = 0; i < sizeof(value); i++)
+		arrayOfByte[i] = *(val + i);
+	return arrayOfByte;
+}
+
+template <typename T>
+void AddVector2Another(std::vector<T>& dest, std::vector<T> from)
+{
+	dest.insert(dest.end(), from.begin(), from.end());
+}
+
+
 
 int main()
 {
+
+	/*Net net(vector<uint32_t>{ 5, 4, 4, 2 });
+
+	std::ostringstream buf;
+
+	//buf << "a";
+	Loader::Save(&net, buf);
+
+	string str = buf.str();
+	for (size_t i = 0; i < str.size(); i++)
+	{
+		cout << (int)str[i] << ',';
+	}
+	cout << endl << endl;
+	auto vec = Var2Bytes((size_t)3);
+	AddVector2Another(vec, Var2Bytes((size_t)5));
+	AddVector2Another(vec, Var2Bytes((size_t)4));
+	AddVector2Another(vec, Var2Bytes((double)4.15));
+
+	for (size_t i = 0; i < vec.size(); i++)
+	{
+		cout << (int)vec[i] << ',';
+	}
+	cout << endl;
+
+	int a = 1;*/
+
+
+	/*std::stringstream buf;
+
+	auto layerSizes = vector<uint32_t>{ 5, 4, 4, 2 };
+
+	Net net(layerSizes);
+	Loader::Save(&net, buf);
+
+	Net net2 = Loader::Load(buf);
+
+	int x = net.GetLayersCount();
+	int x2 = net2.GetLayersCount();
+	for (size_t i = 0; i < net.GetLayersCount(); i++)
+	{
+		Layer layer = net.GetLayer(i);
+		Layer layer2 = net2.GetLayer(i);
+
+		x = layer.GetInputsCount();
+		x2 = layer2.GetInputsCount();
+
+		x = layer.GetNeuronsCount();
+		x2 = layer2.GetNeuronsCount();
+
+		for (size_t i = 0; i < layer.GetInputsCount() + 1; i++)
+		{
+			for (size_t n = 0; n < layer.GetNeuronsCount(); n++)
+			{
+				double d = layer.GetWeight(i, n);
+				double d2 = layer2.GetWeight(i, n);
+				d = d;
+			}
+		}
+	}
+
+	int a = 2;*/
+	
 
 	/*TConsole::GetInstance()->SetBackgroundColor(Color::BROWN);
 	//TConsole::GetInstance()->GetBackgroundColor();

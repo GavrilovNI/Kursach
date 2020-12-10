@@ -40,6 +40,11 @@ namespace NeuralNet
 
 		Layer(uint32_t inputsCount, uint32_t neuronsCount, int seed=time(0))
 		{
+			if (inputsCount == 0)
+				throw std::invalid_argument("inputsCount must be more than 0");
+			if (neuronsCount == 0)
+				throw std::invalid_argument("neuronsCount must be more than 0");
+
 			srand(seed);
 
 			_weights = Utils::Matrix<double>(inputsCount+1, neuronsCount);//inputsCount+1 - we use move neuron? so we should add one input
@@ -61,7 +66,7 @@ namespace NeuralNet
 
 		Layer(const Layer& other)
 		{
-			_weights = Utils::Matrix(other._weights);
+			_weights = Utils::Matrix<double>(other._weights);
 		}
 
 		Layer& operator=(const Layer& other)
@@ -74,12 +79,22 @@ namespace NeuralNet
 			return *this;
 		}
 
+		bool operator==(const Layer& other)
+		{
+			return _weights == other._weights;
+		}
+
+		bool operator!=(const Layer& other)
+		{
+			return !operator==(other);
+		}
+
 		size_t GetInputsCount() const { return _weights.GetSize(0)-1; }
 		size_t GetNeuronsCount() const { return _weights.GetSize(1); }
 
 		Utils::Matrix<double> GetWeights() const
 		{
-			return Utils::Matrix(_weights);
+			return Utils::Matrix<double>(_weights);
 		}
 
 		double GetWeight(int inputIndex, int neuronIndex) const
@@ -118,7 +133,11 @@ namespace NeuralNet
 
 	public:
 
-		Net(std::vector<int> layerSizes)
+		Net()
+		{
+		}
+
+		Net(std::vector<uint32_t> layerSizes)
 		{
 			if (layerSizes.size() < 2)
 				throw std::invalid_argument("count of layers must more than 1");
@@ -148,8 +167,8 @@ namespace NeuralNet
 
 		Net(std::vector<Layer> layers)
 		{
-			if (layers.size() < 2)
-				throw std::invalid_argument("count of layers must more than 1");
+			if (layers.size() == 0)
+				throw std::invalid_argument("count of layers must more than 0");
 
 			this->_layers = layers;
 		}
@@ -159,7 +178,29 @@ namespace NeuralNet
 			_layers = other._layers;
 		}
 
+		Net& operator=(const Net& other)
+		{
+			_layers = other._layers;
+			return *this;
+		}
 
+		bool operator==(const Net& other)
+		{
+			if (_layers.size() != other._layers.size())
+				return false;
+
+			for (size_t i = 0; i < _layers.size(); i++)
+			{
+				if (_layers[i] != other._layers[i])
+					return false;
+			}
+			return true;
+		}
+
+		bool operator!=(const Net& other)
+		{
+			return !operator==(other);
+		}
 
 		int GetLayersCount() const
 		{
@@ -168,14 +209,37 @@ namespace NeuralNet
 
 		Layer GetLayer(uint32_t index) const
 		{
-			if (index > _layers.size())
+			if (index >= _layers.size())
 				throw std::invalid_argument("index out of range");
 
 			return Layer(_layers[index]);
 		}
 
+		std::vector<Layer> GetLayers() const
+		{
+			return std::vector<Layer>(_layers);
+		}
+
+		std::vector<uint32_t> GetLayerSizes() const
+		{
+			std::vector<uint32_t> result(_layers.size()+1);
+			if (_layers.size() > 0)
+			{
+				result[0] = _layers[0].GetInputsCount();
+				for (size_t i = 0; i < _layers.size(); i++)
+				{
+					result[i+1] = _layers[i].GetNeuronsCount();
+				}
+			}
+
+			return result;
+		}
+
 		std::vector<double> GetResult(const std::vector<double> inputs, const ActivationFunc& func) const
 		{
+			if (_layers.size() == 0)
+				throw "Net not initialized";
+
 			if (inputs.size()!=_layers[0].GetInputsCount())
 				throw std::invalid_argument("input size is " + std::to_string(inputs.size()) + ", but expected " + std::to_string(_layers[0].GetInputsCount()));
 

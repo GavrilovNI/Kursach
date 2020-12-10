@@ -1,10 +1,7 @@
 ﻿  TestMatrix.cpp
-C:\Users\Nikita\Documents\Kursach\GTest\TestMatrix.cpp(40,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Nikita\Documents\Kursach\GTest\TestMatrix.cpp(42,24): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Nikita\Documents\Kursach\GTest\TestMatrix.cpp(48,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Nikita\Documents\Kursach\GTest\TestMatrix.cpp(50,24): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Nikita\Documents\Kursach\GTest\TestMatrix.cpp(62,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Nikita\Documents\Kursach\GTest\TestMatrix.cpp(64,24): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Nikita\Documents\Kursach\GTest\TestMatrix.cpp(77,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Nikita\Documents\Kursach\GTest\TestMatrix.cpp(79,24): warning C4018: <: несоответствие типов со знаком и без знака
+  TestNetLoader.cpp
+C:\Users\Nikita\Documents\Kursach\GTest\TestNetLoader.cpp(96,23): warning C4018: <: несоответствие типов со знаком и без знака
+  TestNeuralNet.cpp
+C:\Users\Nikita\Documents\Kursach\GTest\TestNeuralNet.cpp(94,23): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
   GTest.vcxproj -> C:\Users\Nikita\Documents\Kursach\NeuralNet\Debug\GTest.exe

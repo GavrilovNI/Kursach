@@ -42,5 +42,7 @@ namespace Visual
 
 		void Run();
 		void Stop();
+
+		void SetCursorUnderMenu() const;
 	};
 }

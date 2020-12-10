@@ -81,7 +81,28 @@ namespace NeuralNet
 				return *this;
 			}
 
-			int GetSize(uint32_t dimension) const
+			bool operator==(const Matrix& other)
+			{
+				if (this == &other)
+					return true;
+
+				if (_size1 != other._size1 || _size2 != other._size2)
+					return false;
+
+				for (size_t i = 0; i < Size(); i++)
+				{
+					if (_data[i] != other._data[i])
+						return false;
+				}
+				return true;
+			}
+
+			bool operator!=(const Matrix& other)
+			{
+				return !operator==(other);
+			}
+
+			size_t GetSize(uint32_t dimension) const
 			{
 				if (dimension > 1)
 					throw std::invalid_argument("dimension may be only 0 or 1");

@@ -130,5 +130,10 @@ namespace Visual
 		running = false;
 	}
 
+	void Menu::SetCursorUnderMenu() const
+	{
+		TConsole::GetInstance()->GotoXY(_pos + COORD{ 0,(SHORT)_buttons.size() });
+	}
+
 }
 

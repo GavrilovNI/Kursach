@@ -91,7 +91,7 @@ namespace Visual
         bool ClrEol();
         void ClrScr();
         void Delay(WORD MS) const;
-        void DelLine();
+        void DelLine(uint32_t count = 1);
         bool GotoXY(COORD coord);
         void Move(COORD dir);
         void InsLine();
