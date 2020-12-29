@@ -33,52 +33,52 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TConsole.h">
-      <Filter>Файлы заголовков\Visual</Filter>
-    </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>Файлы заголовков\Visual</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils.h">
-      <Filter>Файлы заголовков\Visual</Filter>
-    </ClInclude>
-    <ClInclude Include="Buttons.h">
-      <Filter>Файлы заголовков\Visual</Filter>
-    </ClInclude>
-    <ClInclude Include="Net.h">
-      <Filter>Файлы заголовков\Neural</Filter>
-    </ClInclude>
-    <ClInclude Include="NetLoader.h">
-      <Filter>Файлы заголовков\Neural</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix.h">
-      <Filter>Файлы заголовков\Neural</Filter>
-    </ClInclude>
-    <ClInclude Include="ActivationFunc.h">
-      <Filter>Файлы заголовков\Neural</Filter>
-    </ClInclude>
-    <ClInclude Include="NeuralNetMenu.h">
+    <ClInclude Include="NeuralNet\Visual\NeuralNetMenu.h">
       <Filter>Файлы заголовков\Neural\Visual</Filter>
+    </ClInclude>
+    <ClInclude Include="NeuralNet\ActivationFunc.h">
+      <Filter>Файлы заголовков\Neural</Filter>
+    </ClInclude>
+    <ClInclude Include="NeuralNet\Matrix.h">
+      <Filter>Файлы заголовков\Neural</Filter>
+    </ClInclude>
+    <ClInclude Include="NeuralNet\Net.h">
+      <Filter>Файлы заголовков\Neural</Filter>
+    </ClInclude>
+    <ClInclude Include="NeuralNet\NetLoader.h">
+      <Filter>Файлы заголовков\Neural</Filter>
+    </ClInclude>
+    <ClInclude Include="Visual\Buttons.h">
+      <Filter>Файлы заголовков\Visual</Filter>
+    </ClInclude>
+    <ClInclude Include="Visual\Menu.h">
+      <Filter>Файлы заголовков\Visual</Filter>
+    </ClInclude>
+    <ClInclude Include="Visual\TConsole.h">
+      <Filter>Файлы заголовков\Visual</Filter>
+    </ClInclude>
+    <ClInclude Include="Visual\Utils.h">
+      <Filter>Файлы заголовков\Visual</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="TConsole.cpp">
-      <Filter>Исходные файлы\Visual</Filter>
-    </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Исходные файлы\Visual</Filter>
-    </ClCompile>
-    <ClCompile Include="Utils.cpp">
-      <Filter>Исходные файлы\Visual</Filter>
-    </ClCompile>
-    <ClCompile Include="Buttons.cpp">
-      <Filter>Исходные файлы\Visual</Filter>
-    </ClCompile>
-    <ClCompile Include="NeuralNetMenu.cpp">
+    <ClCompile Include="NeuralNet\Visual\NeuralNetMenu.cpp">
       <Filter>Исходные файлы\Neural\Visual</Filter>
+    </ClCompile>
+    <ClCompile Include="Visual\Buttons.cpp">
+      <Filter>Исходные файлы\Visual</Filter>
+    </ClCompile>
+    <ClCompile Include="Visual\Menu.cpp">
+      <Filter>Исходные файлы\Visual</Filter>
+    </ClCompile>
+    <ClCompile Include="Visual\TConsole.cpp">
+      <Filter>Исходные файлы\Visual</Filter>
+    </ClCompile>
+    <ClCompile Include="Visual\Utils.cpp">
+      <Filter>Исходные файлы\Visual</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 #pragma once
 #include "NeuralNetMenu.h"
-#include "Utils.h"
-#include "NetLoader.h"
+#include "../../Visual/Utils.h"
+#include "../NetLoader.h"
 #include <functional>
 #include <string>
 

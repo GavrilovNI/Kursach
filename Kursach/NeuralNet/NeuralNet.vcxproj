@@ -141,23 +141,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ActivationFunc.h" />
-    <ClInclude Include="Buttons.h" />
-    <ClInclude Include="Matrix.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="Net.h" />
-    <ClInclude Include="NetLoader.h" />
-    <ClInclude Include="NeuralNetMenu.h" />
-    <ClInclude Include="TConsole.h" />
-    <ClInclude Include="Utils.h" />
+    <ClInclude Include="NeuralNet\ActivationFunc.h" />
+    <ClInclude Include="NeuralNet\Matrix.h" />
+    <ClInclude Include="NeuralNet\Net.h" />
+    <ClInclude Include="NeuralNet\NetLoader.h" />
+    <ClInclude Include="NeuralNet\Visual\NeuralNetMenu.h" />
+    <ClInclude Include="Visual\Buttons.h" />
+    <ClInclude Include="Visual\Menu.h" />
+    <ClInclude Include="Visual\TConsole.h" />
+    <ClInclude Include="Visual\Utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Buttons.cpp" />
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="NeuralNetMenu.cpp" />
+    <ClCompile Include="NeuralNet\Visual\NeuralNetMenu.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="TConsole.cpp" />
-    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Visual\Buttons.cpp" />
+    <ClCompile Include="Visual\Menu.cpp" />
+    <ClCompile Include="Visual\TConsole.cpp" />
+    <ClCompile Include="Visual\Utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

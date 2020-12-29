@@ -2,3 +2,5 @@ C:\Users\Nikita\Documents\Kursach\NeuralNet\Debug\NeuralNet.exe
 C:\Users\Nikita\Documents\Kursach\NeuralNet\Debug\NeuralNet.pdb
 C:\Users\Nikita\Desktop\Новая папка\Kursach\Kursach\NeuralNet\Debug\NeuralNet.exe
 C:\Users\Nikita\Desktop\Новая папка\Kursach\Kursach\NeuralNet\Debug\NeuralNet.pdb
+C:\Users\Nikita\Desktop\Kursach\NeuralNet\Debug\NeuralNet.exe
+C:\Users\Nikita\Desktop\Kursach\NeuralNet\Debug\NeuralNet.pdb

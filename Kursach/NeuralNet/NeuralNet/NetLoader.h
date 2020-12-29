@@ -22,7 +22,7 @@ namespace NeuralNet::Utils
 			Write2Stream(layer.GetInputsCount(), stream);
 			Write2Stream(layer.GetNeuronsCount(), stream);
 
-			Utils::Matrix<double> sinapses = layer.GetWeights();
+			::Utils::Matrix<double> sinapses = layer.GetWeights();
 
 			for (size_t i = 0; i < layer.GetInputsCount()+1; i++)//+1 because we use move neuron
 			{
@@ -40,7 +40,7 @@ namespace NeuralNet::Utils
 			stream.read(reinterpret_cast<char*>(&inputsCount), sizeof(inputsCount));
 			stream.read(reinterpret_cast<char*>(&neuronsCount), sizeof(neuronsCount));
 
-			Utils::Matrix<double> sinapses(inputsCount+1, neuronsCount);//+1 because we use move neuron
+			::Utils::Matrix<double> sinapses(inputsCount+1, neuronsCount);//+1 because we use move neuron
 
 			for (size_t i = 0; i < inputsCount+1; i++)//+1 because we use move neuron
 			{

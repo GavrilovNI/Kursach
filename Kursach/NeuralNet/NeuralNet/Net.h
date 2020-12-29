@@ -15,7 +15,7 @@ namespace NeuralNet
 		friend class Net;
 
 	private:
-		Utils::Matrix<double> _weights;
+		::Utils::Matrix<double> _weights;
 
 	public:
 
@@ -47,7 +47,7 @@ namespace NeuralNet
 
 			srand(seed);
 
-			_weights = Utils::Matrix<double>(inputsCount+1, neuronsCount);//inputsCount+1 - we use move neuron? so we should add one input
+			_weights = ::Utils::Matrix<double>(inputsCount+1, neuronsCount);//inputsCount+1 - we use move neuron? so we should add one input
 		
 			for (size_t y = 0; y < inputsCount+1; y++)
 			{
@@ -59,14 +59,14 @@ namespace NeuralNet
 
 		}
 
-		Layer(Utils::Matrix<double> weights)
+		Layer(::Utils::Matrix<double> weights)
 		{
 			_weights = weights;
 		}
 
 		Layer(const Layer& other)
 		{
-			_weights = Utils::Matrix<double>(other._weights);
+			_weights = ::Utils::Matrix<double>(other._weights);
 		}
 
 		Layer& operator=(const Layer& other)
@@ -92,9 +92,9 @@ namespace NeuralNet
 		size_t GetInputsCount() const { return _weights.GetSize(0)-1; }
 		size_t GetNeuronsCount() const { return _weights.GetSize(1); }
 
-		Utils::Matrix<double> GetWeights() const
+		::Utils::Matrix<double> GetWeights() const
 		{
-			return Utils::Matrix<double>(_weights);
+			return ::Utils::Matrix<double>(_weights);
 		}
 
 		double GetWeight(int inputIndex, int neuronIndex) const
@@ -148,7 +148,7 @@ namespace NeuralNet
 			}
 		}
 
-		Net(std::vector<NeuralNet::Utils::Matrix<double>> layersWeights)
+		Net(std::vector<::Utils::Matrix<double>> layersWeights)
 		{
 			if (layersWeights.size() < 2)
 				throw std::invalid_argument("count of layers must more than 1");

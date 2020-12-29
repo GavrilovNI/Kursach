@@ -1,7 +1,19 @@
 ﻿  TestMatrix.cpp
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Matrix.h(226,2): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Matrix.h(219): message : во время компиляции функции-члена класс шаблон "bool Utils::Matrix<int>::operator ==(const Utils::Matrix<int> &)"
+C:\Users\Nikita\Documents\Kursach\GTest\TestMatrix.cpp(130): message : выполняется компиляция ссылки на экземпляр шаблон функции "bool Utils::Matrix<int>::operator ==(const Utils::Matrix<int> &)"
+C:\Users\Nikita\Documents\Kursach\GTest\TestMatrix.cpp(10): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Utils::Matrix<int>"
   TestNetLoader.cpp
 C:\Users\Nikita\Documents\Kursach\GTest\TestNetLoader.cpp(96,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Matrix.h(226,2): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Matrix.h(219): message : во время компиляции функции-члена класс шаблон "bool Utils::Matrix<double>::operator ==(const Utils::Matrix<double> &)"
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Net.h(84): message : выполняется компиляция ссылки на экземпляр шаблон функции "bool Utils::Matrix<double>::operator ==(const Utils::Matrix<double> &)"
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Net.h(18): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Utils::Matrix<double>"
   TestNeuralNet.cpp
 C:\Users\Nikita\Documents\Kursach\GTest\TestNeuralNet.cpp(94,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Matrix.h(226,2): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Matrix.h(219): message : во время компиляции функции-члена класс шаблон "bool Utils::Matrix<double>::operator ==(const Utils::Matrix<double> &)"
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Net.h(84): message : выполняется компиляция ссылки на экземпляр шаблон функции "bool Utils::Matrix<double>::operator ==(const Utils::Matrix<double> &)"
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Net.h(18): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Utils::Matrix<double>"
   Создание кода...
   GTest.vcxproj -> C:\Users\Nikita\Documents\Kursach\NeuralNet\Debug\GTest.exe

@@ -1,7 +1,7 @@
 #pragma once
 #include "gtest/gtest.h"
-#include "../NeuralNet/Net.h"
-#include "../NeuralNet/ActivationFunc.h"
+#include "../NeuralNet/NeuralNet/Net.h"
+#include "../NeuralNet/NeuralNet/ActivationFunc.h"
 #include <vector>
 
 using namespace NeuralNet;

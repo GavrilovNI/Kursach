@@ -1,0 +1,24 @@
+﻿<Window x:Class="NNDataFiller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NNDataFiller"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="284" Width="471">
+    <Grid Background="#FFE0E0E0">
+        <Button x:Name="btn_loadImage"          HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,25,0,0"   Width="150" Height="40"  Content="Загрузить изображение" Click = "btn_loadImage_click"/>
+        <Image x:Name="image"                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,70,0,0"   Width="150" Height="150" Stretch="Uniform" StretchDirection="Both"/>
+        <Label                                  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,25,0,0"  Width="90"  Height="25" Content="Output Count:"/>
+        <TextBox x:Name="textBox_outputsCount"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="275,25,0,0"  Width="50"  Height="25" TextWrapping="Wrap" PreviewTextInput="AllowOnlyUInt" DataObject.Pasting="AllowOnlyUInt"/>
+        <Label                                  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,55,0,0"  Width="90"  Height="25" Content="Data size:"/>
+        <Label                                  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="275,55,0,0"  Width="20"  Height="25" Content="x:"/>
+        <TextBox x:Name="textBox_sizeX"         HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,55,0,0"  Width="50"  Height="25" TextWrapping="Wrap" PreviewTextInput="AllowOnlyUInt" DataObject.Pasting="AllowOnlyUInt"/>
+        <Label                                  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="355,55,0,0"  Width="20"  Height="30" Content="y:"/>
+        <TextBox x:Name="textBox_sizeY"         HorizontalAlignment="Left" VerticalAlignment="Top" Margin="380,55,0,0"  Width="50"  Height="25" TextWrapping="Wrap" PreviewTextInput="AllowOnlyUInt" DataObject.Pasting="AllowOnlyUInt"/>
+        <Button x:Name="btn_start"              HorizontalAlignment="Left" VerticalAlignment="Top" Margin="280,180,0,0"   Width="150" Height="40"  Content="Старт" Click = "btn_start_click"/>
+
+        <ComboBox Name="comboBox_uiType" VerticalAlignment="Top" Margin="180,85,41,0" Height="25" >
+        </ComboBox>
+    </Grid>
+</Window>

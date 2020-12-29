@@ -1,16 +1,17 @@
-﻿  Buttons.cpp
-  Menu.cpp
-  NeuralNetMenu.cpp
-C:\Users\Nikita\Desktop\Новая папка\Kursach\Kursach\NeuralNet\Matrix.h(92,2): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Nikita\Desktop\Новая папка\Kursach\Kursach\NeuralNet\Matrix.h(85): message : во время компиляции функции-члена класс шаблон "bool NeuralNet::Utils::Matrix<double>::operator ==(const NeuralNet::Utils::Matrix<double> &)"
-C:\Users\Nikita\Desktop\Новая папка\Kursach\Kursach\NeuralNet\Net.h(84): message : выполняется компиляция ссылки на экземпляр шаблон функции "bool NeuralNet::Utils::Matrix<double>::operator ==(const NeuralNet::Utils::Matrix<double> &)"
-C:\Users\Nikita\Desktop\Новая папка\Kursach\Kursach\NeuralNet\Net.h(18): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "NeuralNet::Utils::Matrix<double>"
+﻿  NeuralNetMenu.cpp
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Matrix.h(226,2): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Matrix.h(219): message : во время компиляции функции-члена класс шаблон "bool Utils::Matrix<double>::operator ==(const Utils::Matrix<double> &)"
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Net.h(84): message : выполняется компиляция ссылки на экземпляр шаблон функции "bool Utils::Matrix<double>::operator ==(const Utils::Matrix<double> &)"
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Net.h(18): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Utils::Matrix<double>"
   Source.cpp
-C:\Users\Nikita\Desktop\Новая папка\Kursach\Kursach\NeuralNet\Matrix.h(92,2): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Nikita\Desktop\Новая папка\Kursach\Kursach\NeuralNet\Matrix.h(85): message : во время компиляции функции-члена класс шаблон "bool NeuralNet::Utils::Matrix<double>::operator ==(const NeuralNet::Utils::Matrix<double> &)"
-C:\Users\Nikita\Desktop\Новая папка\Kursach\Kursach\NeuralNet\Net.h(84): message : выполняется компиляция ссылки на экземпляр шаблон функции "bool NeuralNet::Utils::Matrix<double>::operator ==(const NeuralNet::Utils::Matrix<double> &)"
-C:\Users\Nikita\Desktop\Новая папка\Kursach\Kursach\NeuralNet\Net.h(18): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "NeuralNet::Utils::Matrix<double>"
+C:\Users\Nikita\Documents\Kursach\NeuralNet\Source.cpp(338,24): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Matrix.h(226,2): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Matrix.h(219): message : во время компиляции функции-члена класс шаблон "bool Utils::Matrix<double>::operator ==(const Utils::Matrix<double> &)"
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Net.h(84): message : выполняется компиляция ссылки на экземпляр шаблон функции "bool Utils::Matrix<double>::operator ==(const Utils::Matrix<double> &)"
+C:\Users\Nikita\Documents\Kursach\NeuralNet\NeuralNet\Net.h(18): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Utils::Matrix<double>"
+  Buttons.cpp
+  Menu.cpp
   TConsole.cpp
   Utils.cpp
   Создание кода...
-  NeuralNet.vcxproj -> C:\Users\Nikita\Desktop\Новая папка\Kursach\Kursach\NeuralNet\Debug\NeuralNet.exe
+  NeuralNet.vcxproj -> C:\Users\Nikita\Documents\Kursach\NeuralNet\Debug\NeuralNet.exe

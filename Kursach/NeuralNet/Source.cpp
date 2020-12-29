@@ -1,13 +1,13 @@
 #pragma once
-#include "Net.h"
-#include "NetLoader.h"
-#include "Matrix.h"
-#include "Menu.h"
-#include "NeuralNetMenu.h"
+#include "./NeuralNet/Net.h"
+#include "./NeuralNet/NetLoader.h"
+#include "./NeuralNet/Matrix.h"
+#include "./Visual/Menu.h"
+#include "./NeuralNet/Visual/NeuralNetMenu.h"
 #include <vector>
 #include <conio.h>
 #include <iostream>
-#include "ActivationFunc.h"
+#include "./NeuralNet/ActivationFunc.h"
 #include <iosfwd>
 #include <sstream>
 #include <cassert>
@@ -98,7 +98,7 @@ void AddVector2Another(std::vector<T>& dest, std::vector<T> from)
 
 
 
-int main()
+/*int main()
 {
 
 	/*Net net(vector<uint32_t>{ 5, 4, 4, 2 });
@@ -200,7 +200,7 @@ int main()
 
 	//cout << "asd";
 
-	TConsole::GetInstance()->GetSettings();
+	/*TConsole::GetInstance()->GetSettings();
 
 	Menu menu({ 0,0 });
 
@@ -237,12 +237,12 @@ int main()
 	
 
 	//cout << "qwe";
-}
+}*/
 
-/*
+
 int main()
 {
-	Net net(vector<int>(4) = { 9,4,3,2 });
+	Net net(vector<uint32_t>(4) = { 9,4,3,2 });
 
 	double inputs[16][9]{
 		{ 1, 1, 1,
@@ -372,5 +372,5 @@ int main()
 	}
 
 }
-*/
+
 

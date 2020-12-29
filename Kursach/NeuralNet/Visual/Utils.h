@@ -32,22 +32,6 @@ namespace Visual
         static bool Question(std::string text);
 		static void Out(std::string text);
 
-		/*template <typename T>
-		static T InputVar(std::string text)
-		{
-			Visual::TConsole* console = Visual::TConsole::GetInstance();
-			COORD startPos = console->Where();
-			T x;
-			std::cout << text + ": ";
-			std::cin >> x;
-
-			COORD nPos = console->Where();
-			console->GotoXY(startPos);
-			console->DelLine(nPos.Y - startPos.Y + 1);
-
-			return x;
-		}*/
-
 		template <class F>
 		static auto bindOkFunc(F&& f)
 		{

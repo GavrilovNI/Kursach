@@ -1,9 +1,9 @@
 #pragma once
 
 #include "gtest/gtest.h"
-#include "../NeuralNet/Net.h"
-#include "../NeuralNet/NetLoader.h"
-#include "../NeuralNet/ActivationFunc.h"
+#include "../NeuralNet/NeuralNet/Net.h"
+#include "../NeuralNet/NeuralNet/NetLoader.h"
+#include "../NeuralNet/NeuralNet/ActivationFunc.h"
 #include <sstream>
 #include <vector>
 

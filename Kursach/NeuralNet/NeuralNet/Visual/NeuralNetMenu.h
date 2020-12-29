@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Menu.h"
-#include "Net.h"
+#include "../../Visual/Menu.h"
+#include "../Net.h"
 
 namespace NeuralNet::NetMenu
 {

@@ -1,0 +1,23 @@
+﻿<Window x:Class="NNDataFiller.WindowFiller"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NNDataFiller"
+        RenderOptions.BitmapScalingMode="NearestNeighbor"
+        UseLayoutRounding="True"
+        mc:Ignorable="d"
+        Title="WindowFiller" Width="1280" Height="720">
+    <Grid x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="700" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Image  Grid.Column="0" Grid.Row="0"        x:Name="image"      HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="25,25,0,0"  Width="650" Height="650" Stretch="Uniform" StretchDirection="Both" Grid.ColumnSpan="2"/>
+        <Button Grid.Column="1"                     x:Name="btn_next"   HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="10,25,0,0"  Width="100" Content="Next" Click = "btn_next_click"/>
+        <Button Grid.Column="1"                     x:Name="btn_save"   HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="10,50,0,0"  Width="100" Content="Save" Click = "btn_save_click"/>
+    </Grid>
+</Window>
