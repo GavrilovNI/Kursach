@@ -20,11 +20,10 @@ namespace NNDataFiller
 
 
 
-        public DataFiller(Size dataSize, uint outputsCount, Bitmap image)
+        public DataFiller(Size dataSize, uint outputsCount)
         {
             this.DataSize = dataSize;
             this.OutputsCount = outputsCount;
-            this.Image = image;
         }
 
         public void Add(Point position, double[] outputs)

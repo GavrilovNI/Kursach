@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R5Ev+S3ufCDWwENbXHNIONPaqIwK5/kDBa6O9fDc9vFneg6oCA6G+kDtjFE5UvANC4xXCRw6Sd5EU5k2PPjuQQ==",
+  "dgSpecHash": "oIdo/b1IzVFQNBU36Uv1sCL8LnrklmTS9w23EhWIuhia9FiTTKgviUUrJdstfxj/3UXT0pDYvWnexX2I2t0pDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nikita\\Documents\\Kursach\\NNDataFiller\\NNDataFiller.csproj",
+  "projectFilePath": "C:\\Users\\Nikita\\Documents\\Kursach\\Kursach\\NNDataFiller\\NNDataFiller.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nikita\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Nikita\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",

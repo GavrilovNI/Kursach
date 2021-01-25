@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nikita\\Documents\\Kursach\\NNDataFiller\\NNDataFiller.csproj": {}
+    "C:\\Users\\Nikita\\Documents\\Kursach\\Kursach\\NNDataFiller\\NNDataFiller.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nikita\\Documents\\Kursach\\NNDataFiller\\NNDataFiller.csproj": {
+    "C:\\Users\\Nikita\\Documents\\Kursach\\Kursach\\NNDataFiller\\NNDataFiller.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nikita\\Documents\\Kursach\\NNDataFiller\\NNDataFiller.csproj",
+        "projectUniqueName": "C:\\Users\\Nikita\\Documents\\Kursach\\Kursach\\NNDataFiller\\NNDataFiller.csproj",
         "projectName": "NNDataFiller",
-        "projectPath": "C:\\Users\\Nikita\\Documents\\Kursach\\NNDataFiller\\NNDataFiller.csproj",
+        "projectPath": "C:\\Users\\Nikita\\Documents\\Kursach\\Kursach\\NNDataFiller\\NNDataFiller.csproj",
         "packagesPath": "C:\\Users\\Nikita\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nikita\\Documents\\Kursach\\NNDataFiller\\obj\\",
+        "outputPath": "C:\\Users\\Nikita\\Documents\\Kursach\\Kursach\\NNDataFiller\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nikita\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Nikita\Documents\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\
+C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\
 NNDataFiller
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Nikita\Documents\Kursach\NNDataFiller\App.xaml
-2-1439330937
+C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\App.xaml
+3-1140578122
 
-6-406479942
+8923132565
 1931153839909
-MainWindow.xaml;WindowFiller.xaml;
+MainWindow.xaml;Test.xaml;WindowFiller.xaml;
 
 False
 

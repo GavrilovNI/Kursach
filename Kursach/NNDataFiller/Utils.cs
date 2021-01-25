@@ -33,7 +33,24 @@ namespace NNDataFiller
             return false;
         }
 
-        public static bool GetPath(out string path, string filter = "All|*.*")
+        public static bool GetPathOpen(out string path, string filter = "All|*.*")
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            dlg.Filter = filter;
+            Nullable<bool> fileDialogResult = dlg.ShowDialog();
+
+            if (fileDialogResult == true)
+            {
+                path = dlg.FileName;
+                return true;
+            }
+
+            path = string.Empty;
+            return false;
+        }
+
+        public static bool GetPathSave(out string path, string filter = "All|*.*")
         {
             Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
 

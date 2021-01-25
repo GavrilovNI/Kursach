@@ -31,6 +31,10 @@ namespace NNDataFiller
             comboBox_uiType.ItemsSource = Array.ConvertAll(WindowFiller.LabeledUI.AllowedTypes, x => x.Name).ToList();
             comboBox_uiType.SelectedIndex = 0;
 
+
+            Test testWindow = new Test();
+            this.Hide();
+            testWindow.Show();
         }
 
         Bitmap loadedImage;
@@ -55,7 +59,7 @@ namespace NNDataFiller
                     return;//ERROR
                 }
 
-                DataFiller dataFiller = new DataFiller(new System.Drawing.Size((int)sizeX, (int)sizeY), outputsCount, loadedImage);
+                DataFiller dataFiller = new DataFiller(new System.Drawing.Size((int)sizeX, (int)sizeY), outputsCount);
 
                 WindowFiller windowFiller = new WindowFiller(dataFiller, WindowFiller.LabeledUI.AllowedTypes[comboBox_uiType.SelectedIndex]);
 

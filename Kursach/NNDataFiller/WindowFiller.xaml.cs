@@ -198,7 +198,7 @@ namespace NNDataFiller
 
         public void Save()
         {
-            if (Utils.GetPath(out string path, "Data files|*.data"))
+            if (Utils.GetPathSave(out string path, "Data files|*.data"))
             {
                 using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate)))
                 {
