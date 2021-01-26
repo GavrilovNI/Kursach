@@ -32,7 +32,7 @@ namespace NNDataFiller.MNIST
             return ReverseBytes(reader.ReadInt32());
         }
 
-        public static void ToDataFillerAndBitmap(List<MNIST_Digit> data, out DataFiller dataFiller, out Bitmap bitmap, int width = 100, int maxCount=-1)
+        public static void ToDataFillerAndBitmap(List<MNIST_Digit> data, out DataFiller dataFiller, out Bitmap bitmap, int width = 100, int maxCount=0)
         {
             if(data==null || data.Count==0)
             {
@@ -45,7 +45,7 @@ namespace NNDataFiller.MNIST
                 width = 1;
             }
 
-            if (maxCount < 0)
+            if (maxCount <= 0)
             {
                 maxCount = data.Count;
             }
@@ -84,7 +84,7 @@ namespace NNDataFiller.MNIST
             }
         }
 
-        public static List<MNIST_Digit> Read(BinaryReader images, BinaryReader labels, int maxCount=-1)
+        public static List<MNIST_Digit> Read(BinaryReader images, BinaryReader labels, int maxCount=0)
         {
             if (ReadInt32Reversed(images) != IMG_FILE_MAGIC_INT)
             {
@@ -103,7 +103,7 @@ namespace NNDataFiller.MNIST
                 throw new Exception("Different size of labels and images");
             }
 
-            if (maxCount < 0)
+            if (maxCount <= 0)
             {
                 maxCount = imagesCount;
             }

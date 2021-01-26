@@ -16,7 +16,10 @@
         <TextBox x:Name="textBox_sizeX"         HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,55,0,0"  Width="50"  Height="25" TextWrapping="Wrap" PreviewTextInput="AllowOnlyUInt" DataObject.Pasting="AllowOnlyUInt"/>
         <Label                                  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="355,55,0,0"  Width="20"  Height="30" Content="y:"/>
         <TextBox x:Name="textBox_sizeY"         HorizontalAlignment="Left" VerticalAlignment="Top" Margin="380,55,0,0"  Width="50"  Height="25" TextWrapping="Wrap" PreviewTextInput="AllowOnlyUInt" DataObject.Pasting="AllowOnlyUInt"/>
-        <Button x:Name="btn_start"              HorizontalAlignment="Left" VerticalAlignment="Top" Margin="280,180,0,0"   Width="150" Height="40"  Content="Старт" Click = "btn_start_click"/>
+        <Button x:Name="btn_start"              HorizontalAlignment="Left" VerticalAlignment="Top" Margin="280,134,0,0"   Width="150" Height="40"  Content="Старт" Click = "btn_start_click"/>
+
+        <Button                                 HorizontalAlignment="Left" VerticalAlignment="Top" Margin="325,195,0,0"   Width="105" Height="25"  Content="MNIST__digits" Click = "btn_MNIST_digits_click"/>
+
 
         <ComboBox Name="comboBox_uiType" VerticalAlignment="Top" Margin="180,85,41,0" Height="25" >
         </ComboBox>

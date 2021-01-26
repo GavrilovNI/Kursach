@@ -9,8 +9,6 @@ namespace NNDataFiller
     
     public class DataFiller
     {
-        public Bitmap Image { get; private set; }
-
         public Size DataSize { get; private set; }
         public uint OutputsCount { get; private set; }
 

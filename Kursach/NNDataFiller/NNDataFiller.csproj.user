@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Test.xaml.cs">
+    <Compile Update="WindowMNIST_Digits.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="WindowFiller.xaml.cs">
@@ -18,7 +18,7 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Test.xaml">
+    <Page Update="WindowMNIST_Digits.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowFiller.xaml">

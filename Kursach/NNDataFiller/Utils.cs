@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -65,6 +67,48 @@ namespace NNDataFiller
 
             path = string.Empty;
             return false;
+        }
+
+
+        public static void SaveToFile(DataFiller dataFiller, string filePath)
+        {
+            using (BinaryWriter writer = new BinaryWriter(File.Open(filePath, FileMode.OpenOrCreate)))
+            {
+                writer.BaseStream.Position = writer.BaseStream.Length;
+                dataFiller.SaveAndClear(writer);
+            }
+        }
+
+        public static void ChangeWindow(Window curr, Window next, Action onClosingAction=null)
+        {
+            curr.Hide();
+            CancelEventHandler onClosing = null;
+            onClosing = (object sender, CancelEventArgs args) => {
+
+                onClosingAction?.Invoke();
+
+                curr.Show();
+                next.Closing -= onClosing;
+            };
+            next.Closing += onClosing;
+            next.Show();
+        }
+
+
+        public static string GetNotExistFilePath(string filepath)
+        {
+            int dotPos = filepath.LastIndexOf(".");
+            string prefix = filepath.Substring(0, dotPos);
+            string ext = filepath.Substring(dotPos);
+
+            string currFilepath = prefix + ext;
+            int x = 1;
+            while(File.Exists(currFilepath))
+            {
+                currFilepath = prefix + "(" + x.ToString() + ")" + ext;
+                x++;
+            }
+            return currFilepath;
         }
 
         public static bool AskYesNo(string msg)

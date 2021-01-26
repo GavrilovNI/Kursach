@@ -38,13 +38,11 @@ C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\bin\Debug\netcoreapp3.1\r
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\NNDataFiller.csprojAssemblyReference.cache
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\MainWindow.g.cs
-C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\Test.g.cs
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\WindowFiller.g.cs
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\NNDataFiller_MarkupCompile.cache
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\NNDataFiller_MarkupCompile.lref
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\MainWindow.baml
-C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\Test.baml
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\WindowFiller.baml
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\NNDataFiller.g.resources
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\NNDataFiller.AssemblyInfoInputs.cache
@@ -54,3 +52,5 @@ C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\N
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\NNDataFiller.dll
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\NNDataFiller.pdb
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\NNDataFiller.genruntimeconfig.cache
+C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\WindowMNIST_Digits.g.cs
+C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\obj\Debug\netcoreapp3.1\WindowMNIST_Digits.baml

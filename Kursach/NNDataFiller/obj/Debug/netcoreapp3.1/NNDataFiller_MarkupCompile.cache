@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Nikita\Documents\Kursach\Kursach\NNDataFiller\App.xaml
-3-1140578122
+3-656052954
 
-8923132565
+8-89891869
 1931153839909
-MainWindow.xaml;Test.xaml;WindowFiller.xaml;
+MainWindow.xaml;WindowFiller.xaml;WindowMNIST_Digits.xaml;
 
 False
 

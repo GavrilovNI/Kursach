@@ -26,15 +26,9 @@ namespace NNDataFiller
         {
             InitializeComponent();
 
-
-
             comboBox_uiType.ItemsSource = Array.ConvertAll(WindowFiller.LabeledUI.AllowedTypes, x => x.Name).ToList();
             comboBox_uiType.SelectedIndex = 0;
 
-
-            Test testWindow = new Test();
-            this.Hide();
-            testWindow.Show();
         }
 
         Bitmap loadedImage;
@@ -44,6 +38,12 @@ namespace NNDataFiller
             {
                 image.Source = Utils.Bitmap2Source(loadedImage);
             }
+        }
+
+        private void btn_MNIST_digits_click(object sender, RoutedEventArgs e)
+        {
+            Window window = new WindowMNIST_Digits();
+            Utils.ChangeWindow(this, window);
         }
 
         private void btn_start_click(object sender, RoutedEventArgs e)
@@ -61,18 +61,12 @@ namespace NNDataFiller
 
                 DataFiller dataFiller = new DataFiller(new System.Drawing.Size((int)sizeX, (int)sizeY), outputsCount);
 
-                WindowFiller windowFiller = new WindowFiller(dataFiller, WindowFiller.LabeledUI.AllowedTypes[comboBox_uiType.SelectedIndex]);
+                WindowFiller windowFiller = new WindowFiller(dataFiller, loadedImage, WindowFiller.LabeledUI.AllowedTypes[comboBox_uiType.SelectedIndex]);
 
-                this.Hide();
-                CancelEventHandler onFillerClosing = null;
-                onFillerClosing = (object sender, CancelEventArgs args) => {
+                Utils.ChangeWindow(this, windowFiller, () => {
                     if (dataFiller.Count > 0 && Utils.AskYesNo("Would you like to save data?"))
                         windowFiller.Save();
-                    windowFiller.Closing -= onFillerClosing;
-                    this.Show();
-                };
-                windowFiller.Closing += onFillerClosing;
-                windowFiller.Show();
+                });
             }
         }
 

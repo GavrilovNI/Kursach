@@ -21,6 +21,7 @@ namespace NNDataFiller
     public partial class WindowFiller : Window
     {
         private DataFiller _dataFiller;
+        private Bitmap _image;
 
         private LabeledUI[] _outputs;
 
@@ -48,7 +49,7 @@ namespace NNDataFiller
 
         }
 
-        public WindowFiller(DataFiller filler, Type uiType, string[] outputNames) : this(filler, uiType)
+        public WindowFiller(DataFiller filler, Bitmap image, Type uiType, string[] outputNames) : this(filler, image, uiType)
         {
             if (outputNames.Length != _outputs.Length)
             {
@@ -61,9 +62,10 @@ namespace NNDataFiller
             }
         }
 
-        public WindowFiller(DataFiller filler, Type uiType)
+        public WindowFiller(DataFiller filler, Bitmap image, Type uiType)
         {
             this._dataFiller = filler;
+            this._image = image;
             InitializeComponent();
 
             
@@ -178,10 +180,10 @@ namespace NNDataFiller
         }
         public void Next()
         {
-            _currPos = new System.Drawing.Point(_random.Next(_dataFiller.Image.Width - _dataFiller.DataSize.Width),
-                                        _random.Next(_dataFiller.Image.Height - _dataFiller.DataSize.Height));
+            _currPos = new System.Drawing.Point(_random.Next(_image.Width - _dataFiller.DataSize.Width),
+                                        _random.Next(_image.Height - _dataFiller.DataSize.Height));
 
-            this.image.Source = Utils.Bitmap2Source(Utils.Crop(_dataFiller.Image, new System.Drawing.Rectangle(_currPos, _dataFiller.DataSize)));
+            this.image.Source = Utils.Bitmap2Source(Utils.Crop(_image, new System.Drawing.Rectangle(_currPos, _dataFiller.DataSize)));
         }
 
         private void UpdateBtnSaveEnabled()
@@ -200,12 +202,8 @@ namespace NNDataFiller
         {
             if (Utils.GetPathSave(out string path, "Data files|*.data"))
             {
-                using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate)))
-                {
-                    writer.BaseStream.Position = writer.BaseStream.Length;
-                    _dataFiller.SaveAndClear(writer);
-                    UpdateBtnSaveEnabled();
-                }
+                Utils.SaveToFile(_dataFiller, path);
+                UpdateBtnSaveEnabled();
             }
         }
 
