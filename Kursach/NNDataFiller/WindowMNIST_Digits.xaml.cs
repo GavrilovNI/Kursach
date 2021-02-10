@@ -111,7 +111,7 @@ namespace NNDataFiller
             Utils.SaveToFile(dataFiller, fileName);
             fileName = fileName.Substring(0, fileName.Length - 4) + "jpg";
 
-            fileName = Utils.GetNotExistFilePath(fileName);
+            //fileName = Utils.GetNotExistFilePath(fileName);
 
             bitmap.Save(fileName);
         }

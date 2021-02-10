@@ -44,7 +44,7 @@ namespace NNDataFiller
             {
                 writer.Write(entry.Key.X);
                 writer.Write(entry.Key.Y);
-                for (int i = 0; i < entry.Value.Length; i++)
+                for (int i = 0; i < OutputsCount; i++)
                 {
                     writer.Write(entry.Value[i]);
                 }

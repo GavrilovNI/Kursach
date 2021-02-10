@@ -141,10 +141,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Imaging\Image.h" />
     <ClInclude Include="NeuralNet\ActivationFunc.h" />
     <ClInclude Include="NeuralNet\Matrix.h" />
     <ClInclude Include="NeuralNet\Net.h" />
     <ClInclude Include="NeuralNet\NetLoader.h" />
+    <ClInclude Include="NeuralNet\Trainer.h" />
     <ClInclude Include="NeuralNet\Visual\NeuralNetMenu.h" />
     <ClInclude Include="Visual\Buttons.h" />
     <ClInclude Include="Visual\Menu.h" />
@@ -152,6 +154,7 @@
     <ClInclude Include="Visual\Utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="NeuralNet\Trainer.cpp" />
     <ClCompile Include="NeuralNet\Visual\NeuralNetMenu.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Visual\Buttons.cpp" />

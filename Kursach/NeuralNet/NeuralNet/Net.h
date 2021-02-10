@@ -220,9 +220,9 @@ namespace NeuralNet
 			return std::vector<Layer>(_layers);
 		}
 
-		std::vector<uint32_t> GetLayerSizes() const
+		std::vector<size_t> GetLayerSizes() const
 		{
-			std::vector<uint32_t> result(_layers.size()+1);
+			std::vector<size_t> result(_layers.size()+1);
 			if (_layers.size() > 0)
 			{
 				result[0] = _layers[0].GetInputsCount();
@@ -233,6 +233,27 @@ namespace NeuralNet
 			}
 
 			return result;
+		}
+
+		size_t GetLayerSize(int layerNum) const
+		{
+			if (layerNum<0 || layerNum>_layers.size())
+				throw std::out_of_range("LayerNum out of range.");
+
+			if (layerNum == _layers.size())
+				return _layers.rend()->GetNeuronsCount();
+
+			return _layers[layerNum].GetInputsCount();
+		}
+
+		size_t GetInputsCount() const
+		{
+			return _layers[0].GetNeuronsCount();
+		}
+
+		size_t GetOutputsCount() const
+		{
+			return _layers.rend()->GetNeuronsCount();
 		}
 
 		std::vector<double> GetResult(const std::vector<double> inputs, const ActivationFunc& func) const

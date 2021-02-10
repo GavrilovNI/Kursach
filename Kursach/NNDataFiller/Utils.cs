@@ -72,9 +72,9 @@ namespace NNDataFiller
 
         public static void SaveToFile(DataFiller dataFiller, string filePath)
         {
-            using (BinaryWriter writer = new BinaryWriter(File.Open(filePath, FileMode.OpenOrCreate)))
+            using (BinaryWriter writer = new BinaryWriter(File.Open(filePath, FileMode.Create)))
             {
-                writer.BaseStream.Position = writer.BaseStream.Length;
+                //writer.BaseStream.Position = writer.BaseStream.Length;
                 dataFiller.SaveAndClear(writer);
             }
         }
@@ -95,18 +95,18 @@ namespace NNDataFiller
         }
 
 
-        public static string GetNotExistFilePath(string filepath)
+        public static string GetNotExistFilePath(string filepath, out int num)
         {
             int dotPos = filepath.LastIndexOf(".");
             string prefix = filepath.Substring(0, dotPos);
             string ext = filepath.Substring(dotPos);
 
             string currFilepath = prefix + ext;
-            int x = 1;
+            num = 0;
             while(File.Exists(currFilepath))
             {
-                currFilepath = prefix + "(" + x.ToString() + ")" + ext;
-                x++;
+                num++;
+                currFilepath = prefix + " (" + num.ToString() + ")" + ext;
             }
             return currFilepath;
         }
